@@ -1,0 +1,21 @@
+{
+  "name": "babyfoot-server",
+  "version": "0.0.0",
+  "description": "Rest api server for babfoot",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "mongoose": "~3.6.2",
+    "express": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "supertest": "~0.5.1"
+  }
+}
