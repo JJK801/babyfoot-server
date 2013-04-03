@@ -1,10 +1,10 @@
-var chai = require('chai')
-	,request = require('supertest')
+var request = require('supertest')
 	,mocha = require('mocha');
 
-var assert = chai.assert;
+process.env.NODE_ENV = 'test'
 
 request = request('http://localhost:3000');
+
 
 // launch server
 require('../index.js');

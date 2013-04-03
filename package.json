@@ -11,7 +11,8 @@
   "license": "BSD",
   "dependencies": {
     "mongoose": "~3.6.2",
-    "express": "*"
+    "express": "*",
+    "config": "~0.4.22"
   },
   "devDependencies": {
     "mocha": "*",

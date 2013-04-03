@@ -1,0 +1,10 @@
+{
+	"express":
+	{
+		"port": 3000
+	},
+	"mongo":
+	{
+		"connection" : "mongodb://localhost/babyfoot"
+	}
+}

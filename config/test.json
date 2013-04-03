@@ -1,0 +1,6 @@
+{
+	"mongo":
+	{
+		"connection" : "mongodb://localhost/test"
+	}
+}
