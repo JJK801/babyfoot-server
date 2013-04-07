@@ -12,6 +12,12 @@ tables.getAll = function(req, res) {
 
 tables.getById = function(req, res) {
     model.Table.findById(req.params.id).exec(function (error, table) {
+        if (error) {
+            throw error;
+        }
+        if (!table) {
+            res.send(404);
+        }
         res.send(table);
     });
 };
@@ -20,21 +26,33 @@ tables.new = function(req, res) {
     var table = new model.Table();
     table.label = req.body.label;
 
-    table.save();
+    table.save(function (err) {
+        if (err) {
+            throw err;
+        }
 
-    res.send(table);
+        res.send(table);
+    });
+
+
 };
 
 tables.update = function(req, res) {
     model.Table.findById(req.params.id).exec(function (error, table) {
 
-        if (!error) {
-        	table.slug = req.body.slug;
-    		table.label = req.body.label;
-    		table.save();
-
-        	res.send(table);
+        if (error) {
+            throw error;
         }
+
+        if (!table) {
+            res.send(404);
+            return;
+        }
+
+		table.label = req.body.label;
+		table.save();
+
+    	res.send(table);
 
     });
 };
@@ -42,13 +60,19 @@ tables.update = function(req, res) {
 tables.remove = function(req, res) {
     model.Table.findById(req.params.id).exec(function (error, table) {
 
-        if (!error) {
-            table.slug = req.body.slug;
-            table.label = req.body.label;
-            table.remove();
-
-            res.send();
+        if (error) {
+            throw error;
         }
+
+        if (!table) {
+            res.send(404);
+            return;
+        }
+
+        table.remove();
+
+        res.send();
+
 
     });
 };
