@@ -1,0 +1,7 @@
+<ul>
+    {% for Player in Players %}
+    <li>{{ Player.name.full }}</li>
+    {% else %}
+    <li>Aucun joueur trouvé</li>
+    {% endfor %}
+</ul>

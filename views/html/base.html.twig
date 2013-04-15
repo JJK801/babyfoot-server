@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        {% block meta %}
+            
+        {% endblock %}
+        {% block stylesheets %}
+        
+        {% endblock %}
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                {% block header %}
+                    {% include 'partials/menu.html.twig' %}
+                {% endblock %}
+            </header>
+            {% block content %}
+            
+            {% endblock %}
+            <footer>
+                {% block footer %}
+                
+                {% endblock %}
+            </footer>
+        </div>
+        {% block javascripts %}
+        
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<ul>
+    <li>
+        <span>Nom:</span>
+        <span>{{ Player.name.last }}</span>
+    </li>
+    <li>
+        <span>Prénom:</span>
+        <span>{{ Player.name.first }}</span>
+    </li>
+    <li>
+        <span>Age:</span>
+        <span>{{ Player.age }} ans</span>
+    </li>
+    <li>
+        <span>Inscription:</span>
+        <span>{{ Player.createdAt|date("d/m/Y") }}</span>
+    </li>
+</ul>
